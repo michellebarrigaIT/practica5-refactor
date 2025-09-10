@@ -3,8 +3,8 @@ console.log("Starting calculation…");
 console.log("Product:", productName);
 console.log("Subtotal:", calculateSubtotal());
 
-var productName = "Espresso Machine";
-var prices = [120, 30, 15]; // base price, shipping, handling
+let productName = "Espresso Machine";
+const prices = [120, 30, 15]; // base price, shipping, handling
 
 function calculateSubtotal() {
     return prices[0] + prices[1] + prices[2];
@@ -12,25 +12,25 @@ function calculateSubtotal() {
 
 console.log("Subtotal after assignment:", calculateSubtotal()); // C
 
-var discountRate = getDefaultDiscount(); // D
+const discountRate = getDefaultDiscount(); // D
 console.log("Discount rate:", discountRate); // E
 
 function getDefaultDiscount() {
     return discountValue; // discountValue isn’t declared yet!
 }
-var discountValue = 0.1;
+const discountValue = 0.1;
 
 console.log("Discount rate after assignment:", getDefaultDiscount()); // F
 
-var applyDiscount = function(amount) {
+const applyDiscount = function(amount) {
     return amount - amount * discountValue;
 };
 console.log("Total after discount:", applyDiscount(calculateSubtotal())); // G
 
 console.log("Taxed total (incl. 8%):", addTax(applyDiscount(calculateSubtotal()))); // H
 
-var addTax = (function() {
-    var rate = 0.08;
+const addTax = (function() {
+    const rate = 0.08;
     return function(amount) {
         return amount + amount * rate;
     };
